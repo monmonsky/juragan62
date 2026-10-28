@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juragan +62 · Mockup A (Meme Cerah)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="base.css">
+  <style>
+    :root {
+      --ink: #111;
+      --paper: #fff;
+      --bg: #ffd23f;
+      --hot: #ff3864;
+      --shadow: 5px 5px 0 var(--ink);
+    }
+    body {
+      background-color: var(--bg);
+      background-image: radial-gradient(rgba(0,0,0,.12) 1.2px, transparent 1.2px);
+      background-size: 18px 18px;
+      color: var(--ink);
+      font-family: 'Rubik', system-ui, sans-serif;
+    }
+    .mockup-nav a { color: var(--ink); font-weight: 800; }
+
+    .board {
+      background: var(--ink);
+      gap: 2px;
+      border: 3px solid var(--ink);
+      box-shadow: 10px 10px 0 var(--ink);
+    }
+    .cell { background: var(--paper); }
+    [data-group=ntt]        { --g: #9c5b2e; }
+    [data-group=maluku]     { --g: #3ec5ff; }
+    [data-group=sulawesi]   { --g: #ff6fb5; }
+    [data-group=kalimantan] { --g: #ff9505; }
+    [data-group=sumatra]    { --g: #f0222f; }
+    [data-group=jawa]       { --g: #ffd60a; }
+    [data-group=elit]       { --g: #13c27a; }
+    [data-group=pusat]      { --g: #6c2bd9; }
+    .cell .strip { border-bottom: 2px solid var(--ink); }
+    .cell.side-top .strip { border-bottom: 0; border-top: 2px solid var(--ink); }
+    .cell.side-left .strip { border-bottom: 0; border-left: 2px solid var(--ink); }
+    .cell.side-right .strip { border-bottom: 0; border-right: 2px solid var(--ink); }
+
+    .cell.type-card { background: #fff6c7; }
+    .cell.type-tax { background: #ffe1e1; }
+    .cell.type-transport, .cell.type-utility { background: #e5f6ff; }
+    .cell.type-corner .name { font-family: 'Bungee', sans-serif; font-weight: 400; }
+    .cell:nth-child(1)  { background: #8ef0a0; }
+    .cell:nth-child(11) { background: #ffb347; }
+    .cell:nth-child(21) { background: #ff9ccf; }
+    .cell:nth-child(31) { background: #ff5e5e; color: #fff; }
+
+    .cell.owned { box-shadow: inset 0 0 0 3px var(--owner); }
+    .cell.owned .price { color: var(--owner); font-weight: 800; opacity: 1; }
+    .cell.mortgaged {
+      background: repeating-linear-gradient(45deg, #fff, #fff 6px, #e3e3e3 6px, #e3e3e3 12px);
+    }
+    .cell.mortgaged .price { color: var(--ink); background: var(--bg); padding: 0 .3em; border: 1px solid var(--ink); }
+
+    .token { border-color: var(--c); box-shadow: 1px 1px 0 var(--ink); }
+
+    .center {
+      background: #fff;
+      background-image: radial-gradient(#ffe7a0 1.5px, transparent 1.5px);
+      background-size: 14px 14px;
+    }
+    .logo {
+      font-family: 'Bungee', sans-serif;
+      font-size: 3.4em;
+      line-height: 1;
+      text-shadow: 3px 3px 0 var(--bg);
+    }
+    .logo span {
+      display: inline-block;
+      background: var(--hot);
+      color: #fff;
+      padding: 0 .2em;
+      border: 3px solid var(--ink);
+      transform: rotate(-5deg);
+      box-shadow: 4px 4px 0 var(--ink);
+      text-shadow: none;
+    }
+    .tagline { font-weight: 800; margin-top: .5em; letter-spacing: .02em; }
+
+    .ih, .turn, .game-card {
+      background: #fff;
+      border: 3px solid var(--ink);
+      box-shadow: var(--shadow);
+      padding: .7em .9em;
+    }
+    .ih-label { font-weight: 800; text-transform: uppercase; font-size: .8em; }
+    .ih-value { font-family: 'Bungee', sans-serif; font-size: 2em; }
+    .ih-up { font-family: 'Rubik', sans-serif; font-size: .45em; color: #fff; background: var(--hot); padding: .1em .4em; vertical-align: middle; border: 2px solid var(--ink); }
+    .ih-bar { border: 2px solid var(--ink); background: #fff; }
+    .ih-bar > div { background: repeating-linear-gradient(-45deg, var(--hot), var(--hot) 6px, #ff7a96 6px, #ff7a96 12px); }
+    .ih-note { font-size: .85em; font-weight: 600; }
+    .die { background: #fff; border: 3px solid var(--ink); border-radius: .35em; box-shadow: 3px 3px 0 var(--ink); }
+    .round { font-size: .9em; }
+
+    .game-card { transform: rotate(-1.5deg); background: #c9f2ff; }
+    .game-card-head { font-family: 'Bungee', sans-serif; font-size: .9em; }
+    .game-card-body { font-size: 1.35em; font-weight: 800; margin: .3em 0; }
+    .game-card-effect { display: inline-block; background: var(--ink); color: #fff; padding: .2em .6em; font-weight: 600; }
+
+    .log li { background: #fff; border: 2px solid var(--ink); padding: .3em .6em; }
+    .log .who { color: var(--hot); }
+
+    .side-title { font-family: 'Bungee', sans-serif; font-weight: 400; font-size: 22px; }
+    .player, .slip {
+      background: #fff;
+      border: 3px solid var(--ink);
+      box-shadow: var(--shadow);
+      padding: 10px 12px;
+    }
+    .player.active { background: #fff6c7; outline: 3px solid var(--hot); outline-offset: 3px; }
+    .badge { border: 2px solid var(--ink); font-weight: 800; }
+    .turn-badge { background: var(--hot); color: #fff; }
+    .badge.jail { background: #ffb347; }
+    .debt { color: var(--hot); }
+    .slip { transform: rotate(1deg); }
+    .slip-title { font-weight: 800; margin-bottom: 6px; }
+    .slip-total { border-top: 2px dashed var(--ink); margin-top: 4px; padding-top: 6px; font-weight: 800; }
+    .plus { color: #0b8f4d; }
+    .minus { color: var(--hot); }
+
+    .btn {
+      background: #fff;
+      color: var(--ink);
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      font-weight: 800;
+    }
+    .btn:not(:disabled):hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--ink); }
+    .btn:not(:disabled):active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+    .btn.primary { background: #8ef0a0; }
+    .btn.danger { background: var(--hot); color: #fff; }
+    .btn.end { background: var(--ink); color: var(--bg); }
+
+    /* ---------- animasi (a-anim.js) ---------- */
+    .board.hopping .cell { overflow: visible; }
+    .cell .tokens { z-index: 5; }
+    [data-cash], [data-debt] { display: inline-block; }
+    .game-card.bansos { background: #ffe0a8; }
+
+    .ticker {
+      display: flex;
+      max-width: 1224px;
+      width: calc(100% - 32px);
+      margin: 12px auto 0;
+      background: var(--ink);
+      color: #fff;
+      border: 3px solid var(--ink);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .ticker-label {
+      font-family: 'Bungee', sans-serif;
+      background: var(--hot);
+      padding: 6px 12px;
+      white-space: nowrap;
+      border-right: 3px solid var(--ink);
+      position: relative;
+      z-index: 1;
+    }
+    .ticker-track { flex: 1; overflow: hidden; display: flex; align-items: center; }
+    .ticker-move {
+      display: flex;
+      gap: 48px;
+      padding-left: 48px;
+      white-space: nowrap;
+      font-weight: 600;
+      animation: ticker 45s linear infinite;
+    }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+
+    .float {
+      position: fixed;
+      z-index: 50;
+      pointer-events: none;
+      font-family: 'Bungee', sans-serif;
+      font-size: 18px;
+      white-space: nowrap;
+      background: #fff;
+      border: 2px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--ink);
+      padding: 2px 8px;
+    }
+    .float.plus { color: #0b8f4d; }
+    .float.minus { color: var(--hot); }
+    .float.info { color: var(--ink); font-family: 'Rubik', sans-serif; font-weight: 800; }
+
+    .stamp {
+      position: fixed;
+      z-index: 60;
+      pointer-events: none;
+      font-family: 'Bungee', sans-serif;
+      font-size: 28px;
+      color: var(--hot);
+      border: 4px solid var(--hot);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .85);
+      padding: 2px 12px;
+    }
+
+    .banner {
+      position: fixed;
+      left: 50%;
+      top: 45%;
+      z-index: 70;
+      pointer-events: none;
+      font-family: 'Bungee', sans-serif;
+      font-size: clamp(32px, 7vw, 76px);
+      white-space: nowrap;
+      background: var(--hot);
+      color: #fff;
+      border: 4px solid var(--ink);
+      box-shadow: 8px 8px 0 var(--ink);
+      padding: 8px 28px;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      top: 0;
+      z-index: 80;
+      width: min(380px, calc(100vw - 32px));
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff;
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 12px 14px;
+      font-size: 14px;
+    }
+    .toast-icon { font-size: 28px; line-height: 1; }
+    .toast small { opacity: .6; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-move { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mockup-nav">Mockup A: Meme Cerah · klik tombol di panel kanan untuk demo animasi</div>
+  <div id="app"></div>
+  <script src="shared.js"></script>
+  <script src="a-anim.js"></script>
+</body>
+</html>
